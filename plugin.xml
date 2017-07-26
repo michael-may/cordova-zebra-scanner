@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		id="com.michaelmay.cordova.plugin.barcodescanner"
+		version="1.0.0">
+	<name>Zebra Barcode Scanner Plugin</name>
+
+	<description>
+		Cordova plugin to interface with Zebra barcode scanners (on Android)
+	</description>
+
+	<repo>
+		https://github.com/michael-may/cordova-zebra-scanner.git
+	</repo>
+
+	<keywords>
+		barcode, scanner, zebra
+	</keywords>
+
+	<license>MIT</license>
+
+	<author>Michael May</author>
+
+	<!-- cordova -->
+	<engines>
+		<engine name="cordova" version=">=6.5.0" />
+	</engines>
+
+	<!-- interface -->
+	<js-module src="www/barcodescanner.js" name="BarcodeScanner">
+		<clobbers target="plugin.barcodescanner" />
+		<clobbers target="cordova.plugins.barcodescanner" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="BarcodeScanner">
+				<param name="android-package" value="com.michaelmay.cordova.plugin.barcodescanner.BarcodeScanner" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+		</config-file>
+
+		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+		<source-file src="src/android/libs/zebrasdk.jar" target-dir="libs/" />
+
+		<source-file src="src/android/BarcodeScanner.java" target-dir="src/com/michaelmay/cordova/plugin/barcodescanner" />
+		<source-file src="src/android/NotificationReceiver.java" target-dir="src/com/michaelmay/cordova/plugin/barcodescanner" />
+		<source-file src="src/android/barcode/BarcodeTypes.java" target-dir="src/com/michaelmay/cordova/plugin/barcodescanner/barcode" />
+		<source-file src="src/android/Constants.java" target-dir="src/com/michaelmay/cordova/plugin/barcodescanner" />
+	</platform>
+</plugin>
