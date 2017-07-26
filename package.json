@@ -1,6 +1,6 @@
 {
   "name": "cordova-zebra-scanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "\n\t\tCordova plugin to interface with Zebra barcode scanners (on Android)\n\t",
   "cordova": {
     "id": "com.michaelmay.cordova.plugin.barcodescanner",
@@ -22,7 +22,7 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=6.5.0"
+      "version": ">=5.0.0"
     }
   ],
   "author": "Michael May",
