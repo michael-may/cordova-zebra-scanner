@@ -26,9 +26,9 @@ This plugin is implemented in `/src/pages/home/`
 
 ## Setup
 ### Cordova CLI
-
+- From your project directory, run `cordova plugin add cordova-zebra-scanner`.
 ### Manual
-- Copy the plugin to the `plugins` directory of you Cordova-based application.
+- Copy the plugin to `/plugins/com.michaelmay.cordova.plugin.barcodescanner` in your Cordova-based project.
 - (If necessary) Remove and re-add the Android platform to add the plugin to your project.
 
 ## Implementation
