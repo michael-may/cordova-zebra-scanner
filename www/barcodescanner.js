@@ -3,7 +3,7 @@ var exec = require('cordova/exec');
 exports.attachHandlers = function(cb, scope) {
 	var fn = this._createCallbackFn(cb, scope);
 
-	exec(fn, null, 'BarcodeScanner', 'handleEvents');
+	exec(fn, null, 'BarcodeScanner', 'handleEvents', []);
 };
 
 exports.connectToScanner = function(scannerIdx, cb, scope) {
