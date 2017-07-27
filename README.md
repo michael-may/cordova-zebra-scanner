@@ -107,10 +107,10 @@ Display the barcode somewhere on the screen, and scan it with your scanner to pa
 ```
 cordova.plugins.barcodescanner.connectToScanner((result) => {
 	switch(result.status) {
-		case: 'pairingRequired':
+		case 'pairingRequired':
 			// Handle barcode display. Pairing needed before scanning will work.
 			break;
-		case: 'paired':
+		case 'paired':
 			// Ready to scan.
 			break;
 	}
